@@ -630,7 +630,7 @@ class Organization(github.GithubObject.CompletableGithubObject):
         assert isinstance(member, github.NamedUser.NamedUser), member
         headers, data = self._requester.requestJsonAndCheck(
             "DELETE",
-            self.url + "/members/" + member._identity
+            self.url + "/memberships/" + member._identity
         )
 
     def remove_from_public_members(self, public_member):
